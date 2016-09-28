@@ -9,10 +9,10 @@ def main():
   width = getWidth(pic)
   midPixel = getPixel(pic, height/2, width/2)
   redChannel = getRed(midPixel)
-  blueChannel = getBlue(midPixel)
   greenChannel = getGreen(midPixel)
-  pixelColor = makeColor(redChannel, blueChannel, greenChannel)
-  intensity = (redChannel + blueChannel + greenChannel) / 3
+  blueChannel = getBlue(midPixel)
+  pixelColor = makeColor(redChannel, greenChannel, blueChannel)
+  intensity = (redChannel + greenChannel + blueChannel) / 3
 
   # Creating "zoom" effect by recoloring pixels the color of the center pixel
   addRectFilled(pic, (width-60)/2, (height-60)/2, 60, 60, pixelColor)
